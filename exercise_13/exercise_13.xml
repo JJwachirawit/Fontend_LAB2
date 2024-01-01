@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="/exercise_13/css/style_13.css"?>
+<!DOCTYPE Library SYSTEM "/css/library.dtd">
+
+<Library>
+  This is a library XML document with CSS and Validate using external DTD
+  <Book Publication="2011" Avialable="Yes">
+    <Bid>101</Bid>
+    <BName>Let Us C</BName>
+    <Price>430</Price>
+    <Author>
+      <FName>Wachirawit</FName>
+      <LName>Mool-Ang</LName>
+      <!-- <FName>Abc</FName> -->
+    </Author>
+  </Book>
+  <Book Language="English" Publication="2011" Avialable="No">
+    <Bid>201</Bid>
+    <BName>Let Us Cpp</BName>
+    <Price>430</Price>
+    <Author>
+      <LName>Wachirawit</LName>
+      <FName>Mool-Ang</FName>
+    </Author>
+  </Book>
+</Library>

@@ -1,0 +1,23 @@
+Library {
+  background-color: #FFFF99;
+}
+
+Book {
+  display: block;
+  margin-bottom: 30pt;
+  margin-left: 0;
+}
+
+Bid {
+  color: #FF0000;
+  font-size: 24px;
+  font-family: "Monotype Corsiva";
+}
+
+BName,
+Price,
+Author {
+  display: block;
+  color: #663399;
+  margin-left: 20pt;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Library (#PCDATA|Book)*>
+<!ELEMENT Book (Bid,BName,Price,Author)>
+<!ELEMENT Author (FName|LName)*>
+<!ELEMENT FName (#PCDATA)>
+<!ELEMENT LName (#PCDATA)>
+<!ELEMENT Bid (#PCDATA)>
+<!ELEMENT BName (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ATTLIST Book Language CDATA #FIXED "English" Publication CDATA #REQUIRED Avialable (Yes|No) "No">

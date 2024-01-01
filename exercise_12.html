@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <title>DOM Validation</title>
+    <script type="text/javascript">
+      function val() {
+        var n = document.f1.name.value;
+        var a = document.f1.age.value;
+        var e = document.f1.email.value;
+        var p = document.f1.pass.value;
+        var p1 = document.f1.c_pass.value;
+        var g = document.f1.gender.value;
+        var pos = e.indexOf("@");
+        var dotpos = e.indexOf(".");
+        var lastdotpos = e.lastIndexOf(".");
+        var str = e.substring(pos + 1, lastdotpos);
+        if (n == "" || a == "" || e == "" || p == "" || p1 == "") {
+          alert("Fill all the fields");
+          return true;
+        }
+        if (!(a >= 18 && a <= 55)) {
+          alert("You are not eligible,age range should be 18-55");
+          return true;
+        }
+        if (n.length < 2) {
+          alert("Name Should be greater than 2 char");
+          return true;
+        }
+        if (p != p1) {
+          alert("Your Password does not match with Confirm Password");
+          document.forms[0].p.value = "";
+          document.forms[0].p1.value = "";
+          document.forms[0].p.focus();
+          return true;
+        }
+        if (
+          document.f1.gender[0].checked == false &&
+          document.f1.gender[1].checked == false
+        ) {
+          alert("please select the radio button");
+          document.form1.r1[0].focus();
+          return true;
+        }
+        if (pos > lastdotpos) {
+          alert("Enter domain name ");
+          return true;
+        } else if (str.length < 5) {
+          alert("email should have @ and . ");
+          document.getElementById("str").innerHTML =
+            "e.g. ravi_singhal30@yahoo.com";
+          return true;
+        } else {
+          document.getElementById("str").innerHTML =
+            "Hi...." + n + " <br>Age : " + a + " <br> Email-Id is : " + e;
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Study of DOM In Java Script</h3>
+    <h4>Validation of Registration Form</h4>
+    <form method="post" name="f1">
+      <p>
+        <font color="#993300">Enter First Name :</font>
+        <input name="name" type="text" />
+      </p>
+      <font color="#993300">Enter Last Name :</font>
+      <input
+        type="text"
+        placeholder="Enter Last name"
+        pattern="[a-zA-Z0-9_-]{6,12}"
+        title="must 
+be alphanumeric in 6-12 chars"
+        required
+      />
+      <p>
+        <font color="#993300">Enter Email</font>
+        <input name="email" type="text" />
+      </p>
+      <p>
+        <font color="#993300">Enter Alternate Email</font>
+        <input type="email" placeholder="Enter email address" required />
+      </p>
+      <p>
+        <font color="#993300">Enter Password</font>
+        <input type="password" name="pass" />
+      </p>
+      <p>
+        <font color="#993300">Enter Confirm Password</font>
+        <input type="password" name="c_pass" />
+      </p>
+      <p>
+        <font color="#993300">Enter contact Number</font>
+        <!--HTML 5 validation-->
+        <input type="tel" required />
+      </p>
+      <p>
+        <font color="#993300">Enter Age</font>
+        <input type="text" name="age" />
+      </p>
+      <p>
+        <font color="#993300">Gender</font>
+        <input type="radio" name="gender" />Male
+        <input type="radio" name="gender" /> FeMale
+      </p>
+      <p>
+        <font color="#993300">Enter Credit Card Number</font>
+        <input
+          type="number"
+          size="10"
+          name="credit"
+          min="8"
+          max="12"
+          title="A credit card number"
+          required
+        />
+      </p>
+      <p>
+        <font color="#993300">Search On Google</font>
+        <input type="search" name="googlesearch" required />
+      </p>
+      <p>
+        <input name="submit" type="submit" value="save" onclick="val()" />
+        <input type="reset" name="r" value="cancle" />
+      </p>
+      <span id="str"> </span>
+    </form>
+  </body>
+</html>
